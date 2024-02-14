@@ -1,0 +1,9 @@
+dependencies:
+- name: redis
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 18.13.0
+- name: postgresql
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 14.0.5
+digest: sha256:8d86e97991525f97a8f2e23dce31b8612a9f30fe079a709b3291db3faa6ab21c
+generated: "2024-02-13T18:24:25.627514856-03:00"

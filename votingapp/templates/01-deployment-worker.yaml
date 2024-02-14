@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: job-deployment
+  namespace: laboratorio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-worker
+  template:
+    metadata:
+      labels:
+        app: deployment-worker
+    spec:
+      containers:
+        - image: jhvs1984/worker
+          imagePullPolicy: Always
+          name: deployment-worker
+          resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+status: {}

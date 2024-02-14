@@ -1,0 +1,22 @@
+redis:
+  fullnameOverride: redis
+  architecture: standalone
+  auth:
+    enabled: false
+  image:
+    tag: "7.2.4"
+  master:
+    podLabels:
+      app: redis
+postgresql:
+  fullnameOverride: postgres
+  global:
+    postgresql:
+      auth:
+        postgresPassword: "postgres"
+  auth:
+    enablePostgresUser: true
+    postgresPassword: "postgres"
+  primary:
+    podLabels:
+      app: postgres

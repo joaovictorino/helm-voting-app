@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-result
+  namespace: laboratorio
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deployment-result
+  template:
+    metadata:
+      labels:
+        app: deployment-result
+    spec:
+      containers:
+        - image: jhvs1984/result-app
+          imagePullPolicy: Always
+          name: deployment-result
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+status: {}
