@@ -6,7 +6,6 @@ metadata:
 spec:
   selector:
     app: deployment-voting
-  type: NodePort
+  type: {{ .Values.service.type }}
   ports:
-    - port: 5000
-      targetPort: 80
+    - port: 80

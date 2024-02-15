@@ -20,3 +20,6 @@ kubectl create ns labotatorio
 
 # install chart
 helm install votingapp ./votingapp -n labotatorio
+
+# install chart with values
+helm install -f values.yaml votingapp ./votingapp -n labotatorio

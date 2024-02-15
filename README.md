@@ -35,3 +35,9 @@ Install chart
 ```sh
 helm install votingapp ./votingapp -n labotatorio
 ```
+
+Install chart with values
+
+```sh
+helm install -f values.yaml votingapp ./votingapp -n labotatorio
+```

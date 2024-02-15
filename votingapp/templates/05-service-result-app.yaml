@@ -6,7 +6,6 @@ metadata:
 spec:
   selector:
     app: deployment-result
-  type: NodePort
+  type: {{ .Values.service.type }}
   ports:
-    - port: 5001
-      targetPort: 80
+    - port: 80

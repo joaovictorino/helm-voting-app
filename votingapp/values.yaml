@@ -20,3 +20,5 @@ postgresql:
   primary:
     podLabels:
       app: postgres
+service:
+  type: NodePort
